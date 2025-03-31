@@ -15,7 +15,7 @@ window.TrelloPowerUp.initialize({
 
             localStorage.setItem(cooldownKey, now);
 
-            const webhookUrl = `https://SEU_DOMINIO/webhook/ativar-proxy?cardId=${card.id}`;
+            const webhookUrl = `https://n8n.api-blogfeelgood.fun/webhook/pop-proxy?cardId=${card.id}`;
 
             return fetch(webhookUrl, { method: 'GET' })
               .then(() => t.alert({ message: '✅ Requisição enviada com sucesso!' }))
