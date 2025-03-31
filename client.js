@@ -3,13 +3,8 @@ window.TrelloPowerUp.initialize({
     return [{
       text: '🌐 Comprar Proxy',
       callback: function(t) {
-        return t.card('id')
-          .then(function(card) {
-            return t.navigate({
-              url: `https://app.privateproxy.me/order/2408?purpose_id=306`,
-              target: 'blank'
-            });
-          });
+        window.open('https://app.privateproxy.me/order/2408?purpose_id=306', '_blank');
+        return t.closePopup(); // fecha o popup do botão
       }
     }];
   }
