@@ -1,26 +1,10 @@
 window.TrelloPowerUp.initialize({
   'card-buttons': function(t, options) {
     return [{
-      text: '🌐 Gerar Proxy',
+      text: '🌐 Comprar Proxy',
       callback: function(t) {
-        return t.card('id')
-          .then(function(card) {
-            const cooldownKey = `proxyCooldown_${card.id}`;
-            const now = Date.now();
-            const lastClick = localStorage.getItem(cooldownKey);
-
-            if (lastClick && now - parseInt(lastClick) < 3000) {
-              return t.alert({ message: '⏳ Processando...' });
-            }
-
-            localStorage.setItem(cooldownKey, now);
-
-            const webhookUrl = `https://n8n.api-blogfeelgood.fun/webhook/pop-proxy?cardId=${card.id}`;
-
-            return fetch(webhookUrl, { method: 'GET' })
-              .then(() => t.alert({ message: '✅ Requisição enviada com sucesso!' }))
-              .catch(() => t.alert({ message: '❌ Erro ao enviar a requisição.' }));
-          });
+        window.open('https://app.privateproxy.me/order/2408?purpose_id=306', '_blank');
+        return;
       }
     }];
   }
